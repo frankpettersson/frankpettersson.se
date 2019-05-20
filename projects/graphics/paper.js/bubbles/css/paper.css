@@ -1,0 +1,17 @@
+html,
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+#paper {
+    border: 1px solid black;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

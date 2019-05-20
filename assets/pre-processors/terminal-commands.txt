@@ -1,0 +1,2 @@
+sass --watch frankpettersson.se/assets/pre-processors/scss:frankpettersson.se/assets/style
+pug --watch frankpettersson.se/assets/pre-processors/pug --pretty --out frankpettersson.se/

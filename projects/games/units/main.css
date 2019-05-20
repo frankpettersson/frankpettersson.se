@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+body {
+    margin: 0;
+}
+#wrapper {
+    width: 90%;
+    max-width: 600px; 
+    margin: 10px auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+/*BOX*/
+.box {
+    border: 1px dashed black;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: 'Roboto Mono', monospace;
+}
+.box:last-child {
+    margin-bottom: 0;
+}
+.box-header {
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+.button {
+    user-select: none;
+    border: 3px outset rgb(200, 200, 200);
+    text-align: center;
+    margin: auto;
+    padding: 2px;
+}
+.button:hover {
+    background: rgb(240, 240, 240);
+}
+.button:active {
+    background: rgb(240, 240, 240);
+    border: 3px inset rgb(200, 200, 200);
+}
+/*!*/
+/*COINS*/
+/*!*/
+/*CREATE UNIT*/
+#name {
+    width: calc(100% - 4px);
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+/*!*/
+/*ERROR*/
+.error {
+    display: none;
+    color: red;
+    text-align: center;
+}
+/*!*/
+/*UNITS*/
+table {
+    width: 100%;
+}
+tr:first-child {
+    font-weight: bold;
+}
+.unit.button {
+    text-align: left;
+}
+/*!*/
