@@ -1,5 +1,5 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "allow-from https://frankpettersson.se/"
+    X-Frame-Options = "allow-from /"
     X-XSS-Protection = "1; mode=block"
