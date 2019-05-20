@@ -1,4 +1,6 @@
 //___________________________________________________________________
+document.querySelector('#stage').style.width = '400px';
+document.querySelector('#stage').style.height = '400px';
 const stage = {
     id: document.getElementById('stage'),
     width: 400,
@@ -16,7 +18,6 @@ const stage = {
         return Math.round(diag);
     }
 };
-console.log(stage.id);
 const canvas1 = document.getElementById('canvas1');
 const canvas2 = document.getElementById('canvas2');
 const canvas3 = document.getElementById('canvas3');
