@@ -1,0 +1,19 @@
+#stage {
+    position: relative;
+    border: 2px solid black;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+canvas {position: absolute;}
+#canvas1 {
+    z-index: 1;
+}
+#canvas2 {
+    z-index: 2;
+}
+#canvas3 {
+    z-index: 3;
+}
