@@ -1,0 +1,9 @@
+# GOOGLE BOT OK
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+# ALLOW USERS
+User-agent: *
+Allow: /
+
+Sitemap: https://frankpettersson.se/sitemap.xml
