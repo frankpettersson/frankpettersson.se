@@ -3,4 +3,4 @@
   [headers.values]
     X-Frame-Options = "sameorigin"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; object-src 'none'; script-src https://frankpettersson.se/; frame-src 'self'; manifest-src 'self'"
+    Content-Security-Policy = "default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; object-src 'none'; script-src 'strict-dynamic' https://frankpettersson.se/; frame-src 'self'; manifest-src 'self'"
