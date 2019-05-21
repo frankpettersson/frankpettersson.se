@@ -36,7 +36,7 @@ let root = {
         this.setValue(unitCreates, this.lastUnit);
         this.setValue(unitOwned, owned);
 
-        //append table entries to table
+        //append table entries to tables
         unit.appendChild(unitName);
         unit.appendChild(unitCreates);
         unit.appendChild(unitOwned);
