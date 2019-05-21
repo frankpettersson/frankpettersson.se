@@ -8,10 +8,10 @@ let root = {
         this.createUnit('Ogre');
         this.createUnit('Orc');
     },
-    getCoin: function () {
-        this.coinVal++;
-        document.getElementById('coin').innerText = this.coinVal;
-    },
+    getCoin: document.querySelector('#get-coin').addEventListener('click', function() {
+        root.coinVal++;
+        document.querySelector('#coin').innerText = root.coinVal;
+    }),
     createUnit: function (name = this.defaultUnitName + this.unitNumber, cost = 10, owned = 0) {
         //unit element variables
         let unit = document.createElement('tr');
@@ -49,20 +49,18 @@ let root = {
         //increment unit number
         this.unitNumber++;
     },
-    newUnit: function (click = false) {
-        if (click === true) {
-            let name = document.getElementById('name').value;
-            if (name !== "") {
-                this.createUnit(name)
-                document.getElementById('name').value = '';
-                document.getElementById('error-unit').style.display = 'none';
-                document.getElementById('error-create').style.display = 'none';
-            } else {
-                document.getElementById('error-unit').style.display = 'none';
-                this.error('Please enter a name', 'error-create');
-            }
+    newUnit: document.querySelector('#unit').addEventListener('click', function() {
+        let name = document.querySelector('#name').value;
+        if (name !== "") {
+            root.createUnit(name)
+            document.getElementById('name').value = '';
+            document.getElementById('error-unit').style.display = 'none';
+            document.getElementById('error-create').style.display = 'none';
+        } else {
+            document.getElementById('error-unit').style.display = 'none';
+            root.error('Please enter a name', 'error-create');
         }
-    },
+    }),
     buyUnit: function (element) {
         let i = element.getAttribute('data-value');
         if (i == 0) {
@@ -109,10 +107,6 @@ let root = {
     }
 }
 root.init();
-
-document.querySelector('#get-coin').addEventListener('click', root.getCoin());
-document.querySelector('#unit').addEventListener('click', root.newUnit(true));
-
 //TICKER
 let fpsInterval, now, then, elapsed;
 
