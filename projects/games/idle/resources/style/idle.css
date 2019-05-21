@@ -122,6 +122,12 @@ p, table,
   width: 10%;
   max-width: 30px;
   text-align: center;
+  width: 13px; 
+  height: 13px;
+}
+
+.arrow-text {
+  display: none;
 }
 
 .statBox .arrow img {

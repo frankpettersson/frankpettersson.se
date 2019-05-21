@@ -153,7 +153,7 @@ box2.innerHTML = '<h3>give me '+game.name+'!</h3>'+
 unitBoxWrap.className = 'unitBoxWrap';
 unitBoxWrap.innerHTML = '<h4>hire '+game.hires+'!</h4>'+
                         '<h5>'+
-                            '<img src="../resources/images/arrow_open.svg" style="width: 13px; height: 13px;" class="arrows" id="arrow0">'+
+                            '<img src="../resources/images/arrow_open.svg" class="arrows" id="arrow0">'+
                         ' '+game.hires+'</h5>';
 unitBox.className = 'unitBox';
 unitBox.id = 'unitBox';
@@ -194,10 +194,10 @@ for(let i = 0; i < uLen; i++) {
                         '</div>'+
                         '<div class="statBox">'+
                             '<div class="arrow">'+
-                                '<img src="../resources/images/arrow_open.svg" style="width: 15px; height: 15px;" class="arrows" id="arrow'+(i+1)+'">'+
+                                '<img src="../resources/images/arrow_open.svg" class="arrows" id="arrow'+(i+1)+'">'+
                                 '<p id="p1'+i+'">stats</p>'+
                             '</div>'+
-                            '<p id="p2'+i+'" style="display: none">stats</p>'+
+                            '<p class="arrow-text" id="p2'+i+'">stats</p>'+
                             '<div class="stats" id="stats'+i+'">'+
                                 '<table>'+
                                     '<tr>'+
