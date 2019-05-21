@@ -109,6 +109,10 @@ let root = {
     }
 }
 root.init();
+
+document.querySelector('#get-coin').addEventListener('click', root.getCoin());
+document.querySelector('#unit').addEventListener('click', root.newUnit(true));
+
 //TICKER
 let fpsInterval, now, then, elapsed;
 
