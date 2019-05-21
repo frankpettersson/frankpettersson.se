@@ -327,7 +327,7 @@ let arrows = new Map();
 for (let i = 0; i <= 10; i++) {
     arrows.set(`arrow${i}`, 0);
 }
-//Listens for click
+//Listens for clicks
 let selectedArrow = document.getElementsByClassName('arrows');
 for (let i = 0; i <= uLen; i++) {
     selectedArrow[i].addEventListener('click', function unitBuy() {
