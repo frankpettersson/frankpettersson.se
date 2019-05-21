@@ -79,10 +79,10 @@ function update(grid, ant){
 		ant.d = (ant.d === 3) ? 0 : (ant.d+1);//2R
 		wall(ant.x, ant.y, 3);
 	} else if (grid[ant.y][ant.x] === 3) {
-		ant.d = (ant.d === 3) ? 0 : (ant.d+1);//3L
+		ant.d = (ant.d === 0) ? 3 : (ant.d-1);//3L
 		wall(ant.x, ant.y, 4);
 	} else if (grid[ant.y][ant.x] === 4) {
-		ant.d = (ant.d === 3) ? 0 : (ant.d+1);//4L
+		ant.d = (ant.d === 0) ? 3 : (ant.d-1);//4L
 		wall(ant.x, ant.y, 5);
 	} else if (grid[ant.y][ant.x] === 5) {
 		ant.d = (ant.d === 0) ? 3 : (ant.d-1);//5L
@@ -91,10 +91,10 @@ function update(grid, ant){
 		ant.d = (ant.d === 3) ? 0 : (ant.d+1);//6R
 		wall(ant.x, ant.y, 7);
 	} else if (grid[ant.y][ant.x] === 7) {
-		ant.d = (ant.d === 3) ? 0 : (ant.d+1);//7L
+		ant.d = (ant.d === 0) ? 3 : (ant.d-1);//7L
 		wall(ant.x, ant.y, 8);
 	} else if (grid[ant.y][ant.x] === 8) {
-		ant.d = (ant.d === 3) ? 0 : (ant.d+1);//8L
+		ant.d = (ant.d === 0) ? 3 : (ant.d-1);//8L
 		wall(ant.x, ant.y, 9);
 	} else if (grid[ant.y][ant.x] === 9) {
 		ant.d = (ant.d === 0) ? 3 : (ant.d-1);//9L
