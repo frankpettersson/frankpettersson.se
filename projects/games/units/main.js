@@ -30,7 +30,7 @@ let root = {
         unitOwned.id = 'owned' + this.unitNumber;
         unitCost.className = 'unit button';
         unitCost.setAttribute('data-value', this.unitNumber);
-        unitCost.setAttribute('onclick', 'root.buyUnit(this)');
+        unitCost.addEventListener('click', e => this.buyUnit(e.target));
         this.setValue(unitName, name);
         this.setValue(unitCost, cost + ' ' + this.lastUnit);
         this.setValue(unitCreates, this.lastUnit);
