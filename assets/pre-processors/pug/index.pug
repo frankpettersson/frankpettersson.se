@@ -324,24 +324,25 @@ html(lang="en")
                     table
                         tbody
                             tr
-                                th
-                                    h3 UI COLOR
-                                th
-                                    input#select-ui-color(type='color')
-                                th#current-ui-color
+                                th SETTING
+                                th CONFIGURATION
+                                th SAVED
                             tr
-                                th
-                                    h3 LANDING PAGE
-                                th
+                                td UI COLOR
+                                td
+                                    input#select-ui-color(type='color')
+                                td#current-ui-color
+                            tr
+                                td LANDING PAGE
+                                td
                                     select#select-landing-page(name="select-landing-page")
                                         option(value="PROJECTS") PROJECTS
                                         option(value="DESCRIPTIONS") DESCRIPTIONS
                                         option(value="SETTINGS") SETTINGS
-                                th#current-landing-page
+                                td#current-landing-page
                             tr
-                                th
-                                    h3 DEFAULT PROJECT
-                                th
+                                td DEFAULT PROJECT
+                                td
                                     select#select-default-project(name="select-default-project")
                                         each item in project
                                             if item.exclude === false
@@ -349,7 +350,7 @@ html(lang="en")
                                                     option(value='projects/graphics/'+item.path+'/index.html', label=item.name.toUpperCase())
                                                 if item.category === 'games'
                                                     option(value='projects/games/'+item.path+'/index.html', label=item.name.toUpperCase())
-                                th#current-default-project
+                                td#current-default-project
                     .buttons
                         .button#save
                             p SAVE

@@ -1,6 +1,5 @@
 //DEFAULT SETTINGS
 let activeLink = 0;
-let defaultSettingText = 'Stored: ';
 
 //GET SETTINGS
 let DEFAULT_PROJECT = localStorage.getItem('DEFAULT_PROJECT');
@@ -26,7 +25,7 @@ document.querySelector('#save').addEventListener('click', () => {
     updateUI(newUIColor);
     //SET LANDING PAGE
     let newLandingPage = document.querySelector('#select-landing-page').value;
-    document.querySelector('#current-landing-page').innerText = defaultSettingText+newLandingPage;
+    document.querySelector('#current-landing-page').innerText = newLandingPage;
     document.querySelector('#select-landing-page').value = newLandingPage;
     localStorage.setItem('LANDING_PAGE', newLandingPage);
     //SET DEFAULT PROJECT
@@ -42,7 +41,7 @@ document.querySelector('#reset').addEventListener('click', () => {
     document.querySelectorAll('.link a')[activeLink].style.color = '#ff009d';
     updateUI('#ff009d');
     //RESET LANDING PAGE
-    document.querySelector('#current-landing-page').innerText = defaultSettingText+'PROJECTS';
+    document.querySelector('#current-landing-page').innerText = 'PROJECTS';
     document.querySelector('#select-landing-page').value = 'PROJECTS';
     localStorage.setItem('LANDING_PAGE', 'PROJECTS');
     //RESET DEFAULT PROJECT
@@ -53,11 +52,7 @@ document.querySelector('#reset').addEventListener('click', () => {
 function updateDefaultProject(project, label, image) {
     document.getElementById('frontframe').src = project;
     document.getElementById('project-title').innerHTML = label+`<a href="${project}", target="_blank", rel="noopener noreferrer"><img id="project-ext" src="assets/images/util/external.svg" alt="open in new tab"></a>`;
-    document.querySelector('#current-default-project').innerHTML = defaultSettingText+label;
-    /*
-    document.querySelector('#current-default-project-image').src = image;
-    document.querySelector('#current-default-project-image').alt = 'default '+label;
-    */
+    document.querySelector('#current-default-project').innerText = label;
     document.querySelector('#select-default-project').value = project;
     localStorage.setItem('DEFAULT_PROJECT', project);
     localStorage.setItem('DEFAULT_PROJECT_LABEL', label);
@@ -66,7 +61,7 @@ function updateDefaultProject(project, label, image) {
 
 //UPDATE LANDING PAGE
 function updateLandingPage(page) {
-    document.querySelector('#current-landing-page').innerText = defaultSettingText+page;
+    document.querySelector('#current-landing-page').innerText = page;
     if (page === 'PROJECTS') {
         document.querySelector('#select-landing-page').value = page;
         document.querySelectorAll('.link a')[0].style.color = UI_COLOR;
@@ -94,7 +89,7 @@ function updateLandingPage(page) {
 //UPDATE UI COLOR
 function updateUI(color) {
     localStorage.setItem('UI_COLOR', color);
-    document.querySelector('#current-ui-color').innerText = defaultSettingText+color;
+    document.querySelector('#current-ui-color').innerText = color;
     document.querySelector('#current-ui-color').style.color = color;
     document.querySelector('#select-ui-color').value = color;
 
