@@ -10,7 +10,7 @@ let LANDING_PAGE = localStorage.getItem('LANDING_PAGE');
 let UI_COLOR = localStorage.getItem('UI_COLOR');
 
 //DEFAULT PROJECT
-DEFAULT_PROJECT ? updateDefaultCanvas(DEFAULT_PROJECT, DEFAULT_PROJECT_LABEL, DEFAULT_PROJECT_IMAGE) : updateDefaultCanvas('projects/graphics/js_canvas/flowing_squares/index.html', 'FLOWING SQUARES', 'assets/images/thumbnails/flowing squares.png');
+DEFAULT_PROJECT ? updateDefaultProject(DEFAULT_PROJECT, DEFAULT_PROJECT_LABEL, DEFAULT_PROJECT_IMAGE) : updateDefaultProject('projects/graphics/js_canvas/flowing_squares/index.html', 'FLOWING SQUARES', 'assets/images/thumbnails/flowing squares.png');
 
 //LANDING PAGE
 LANDING_PAGE ? updateLandingPage(LANDING_PAGE) : updateLandingPage('PROJECTS');
@@ -33,7 +33,7 @@ document.querySelector('#save').addEventListener('click', () => {
     let newDefaultCanvas = document.querySelector('#select-default-project').value;
     let newDefaultCanvasLabel = document.querySelector('#select-default-project').options[document.querySelector('#select-default-project').selectedIndex].label;
     let newDefaultCanvasImage = 'assets/images/thumbnails/'+document.querySelector('#select-default-project').options[document.querySelector('#select-default-project').selectedIndex].label.toLowerCase()+'.png';
-    updateDefaultCanvas(newDefaultCanvas, newDefaultCanvasLabel, newDefaultCanvasImage);
+    updateDefaultProject(newDefaultCanvas, newDefaultCanvasLabel, newDefaultCanvasImage);
 });
 
 //RESET SETTINGS
@@ -46,13 +46,13 @@ document.querySelector('#reset').addEventListener('click', () => {
     document.querySelector('#select-landing-page').value = 'PROJECTS';
     localStorage.setItem('LANDING_PAGE', 'PROJECTS');
     //RESET DEFAULT PROJECT
-    updateDefaultCanvas('projects/graphics/js_canvas/flowing_squares/index.html', 'FLOWING SQUARES', 'assets/images/thumbnails/flowing squares.png');
+    updateDefaultProject('projects/graphics/js_canvas/flowing_squares/index.html', 'FLOWING SQUARES', 'assets/images/thumbnails/flowing squares.png');
 });
 
 //UPDATE DEFAULT PROJECT
-function updateDefaultCanvas(project, label, image) {
+function updateDefaultProject(project, label, image) {
     document.getElementById('frontframe').src = project;
-    document.getElementById('project-title').innerText = label;
+    document.getElementById('project-title').innerHTML = label+`<a href="${project}", target="_blank", rel="noopener noreferrer"><img id="project-ext" src="assets/images/util/external.svg" alt="open in new tab"></a>`;
     document.querySelector('#current-default-project').innerText = defaultSettingText+label;
     document.querySelector('#current-default-project-image').src = image;
     document.querySelector('#current-default-project-image').alt = 'default '+label;
@@ -201,7 +201,7 @@ let projectClick = e => e.addEventListener('click', e => {
     if (e.target.nodeName.toLowerCase() === "img") {
         let src = e.target.getAttribute('data-src');
         document.getElementById('frontframe').src = src;
-        document.getElementById('project-title').innerText = e.target.parentElement.nextElementSibling.innerText;
+        document.getElementById('project-title').innerHTML = e.target.parentElement.nextElementSibling.innerText+`<a href="${src}", target="_blank", rel="noopener noreferrer"><img id="project-ext" src="assets/images/util/external.svg" alt="open in new tab"></a>`;
         window.scrollTo(0, 0);
     }
 });

@@ -145,6 +145,12 @@ body #wrap header .box.nav #nav-right .nav-mobile {
   body #wrap header .box.nav #nav-right .nav-mobile .menu-btn:checked ~ .mobile-links {
     max-height: 150px;
     visibility: visible;
+    background: #ffffff;
+    border: 5px double #787878;
+  }
+  body #wrap header .box.nav #nav-right .nav-mobile .menu-btn:checked ~ .mobile-links .mobile-link {
+    visibility: visible;
+    max-height: 100px;
   }
   body #wrap header .box.nav #nav-right .nav-mobile .menu-btn:checked ~ .menu-icon .navicon {
     background: transparent;
@@ -160,17 +166,19 @@ body #wrap header .box.nav #nav-right .nav-mobile {
   }
   body #wrap header .box.nav #nav-right .nav-mobile .mobile-links {
     clear: both;
-    background: #ffffff;
-    visibility: hidden;
-    border: 5px double #787878;
+    max-height: 0;
     border-top: none;
+    transition: all 0.3s;
   }
   body #wrap header .box.nav #nav-right .nav-mobile .mobile-links .mobile-link {
+    visibility: hidden;
+    max-height: 0;
     padding: 10px 0;
     margin: 0 auto;
     width: 60%;
     border-bottom: 2px solid #787878;
     display: table;
+    transition: max-height 0.3s;
   }
   body #wrap header .box.nav #nav-right .nav-mobile .mobile-links .mobile-link:last-child {
     border-bottom: none;
@@ -410,6 +418,16 @@ body #wrap main #project-iframe #project-title {
   color: white;
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
 }
+body #wrap main #project-iframe #project-ext {
+  padding: 5px;
+  position: absolute;
+  height: 30px;
+}
+@media only screen and (max-width: 380px) {
+  body #wrap main #project-iframe #project-ext {
+    display: none;
+  }
+}
 body #wrap main #project-iframe iframe {
   display: block;
   border: 5px double #787878;
@@ -440,6 +458,23 @@ body #wrap main #descriptions .category .project p {
 }
 body #wrap main #descriptions .category .project p b {
   text-transform: uppercase;
+}
+body #wrap main #descriptions .category .project .thumbnail {
+  display: flex;
+}
+body #wrap main #descriptions .category .project .thumbnail .ext:hover ~ .ext-img {
+  opacity: 1;
+}
+body #wrap main #descriptions .category .project .thumbnail .ext-img {
+  position: absolute;
+  height: 30px;
+  padding: 45px;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+body #wrap main #descriptions .category .project .thumbnail .ext-img:hover {
+  opacity: 1;
 }
 @media only screen and (max-width: 300px) {
   body #wrap main #settings {

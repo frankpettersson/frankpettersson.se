@@ -269,6 +269,7 @@ html(lang="en")
             main
                 #project-iframe.box
                     h1#project-title FLOWING SQUARES
+                    //img#project-ext(src="assets/images/util/external.svg", alt="open in new tab")
                     iframe#frontframe(sandbox="allow-same-origin allow-scripts", src="projects/graphics/js_canvas/flowing_squares/", title="projectiframe", frameborder="0", scrolling="no")
                 #projects.box
                     .category
@@ -293,7 +294,8 @@ html(lang="en")
                                     if item.exclude === false
                                         .project
                                             a.thumbnail(href='projects/games/'+item.path+'/index.html', target='_blank', rel='noopener noreferrer')
-                                                img(src='assets/images/thumbnails/'+item.name+'.png', alt=item.name)
+                                                img.ext(src='assets/images/thumbnails/'+item.name+'.png', alt=item.name)
+                                                img.ext-img(src="assets/images/util/external.svg", alt='open '+item.name+' in new tab')
                                             p
                                                 b=item.name
                                                 i=' - '+item.date
@@ -309,7 +311,8 @@ html(lang="en")
                                     if item.exclude === false
                                         .project
                                             a.thumbnail(href='projects/graphics/'+item.path+'/index.html', target='_blank', rel='noopener noreferrer')
-                                                img(src='assets/images/thumbnails/'+item.name+'.png', alt=item.name)
+                                                img.ext(src='assets/images/thumbnails/'+item.name+'.png', alt=item.name)
+                                                img.ext-img(src="assets/images/util/external.svg", alt='open '+item.name+' in new tab')
                                             p
                                                 b=item.name
                                                 i=' - '+item.date
