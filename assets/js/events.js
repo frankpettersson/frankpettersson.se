@@ -53,9 +53,11 @@ document.querySelector('#reset').addEventListener('click', () => {
 function updateDefaultProject(project, label, image) {
     document.getElementById('frontframe').src = project;
     document.getElementById('project-title').innerHTML = label+`<a href="${project}", target="_blank", rel="noopener noreferrer"><img id="project-ext" src="assets/images/util/external.svg" alt="open in new tab"></a>`;
-    document.querySelector('#current-default-project').innerText = defaultSettingText+label;
+    document.querySelector('#current-default-project').innerHTML = defaultSettingText+label;
+    /*
     document.querySelector('#current-default-project-image').src = image;
     document.querySelector('#current-default-project-image').alt = 'default '+label;
+    */
     document.querySelector('#select-default-project').value = project;
     localStorage.setItem('DEFAULT_PROJECT', project);
     localStorage.setItem('DEFAULT_PROJECT_LABEL', label);

@@ -481,41 +481,25 @@ body #wrap main #descriptions .category .project .thumbnail .ext-img:hover {
     padding: 5px;
   }
 }
-body #wrap main #settings .settings-list .setting {
-  border-bottom: 5px double #787878;
-  padding: 10px 0;
-  display: flex;
+body #wrap main #settings table {
+  width: 100%;
+  text-align: left;
 }
-body #wrap main #settings .settings-list .setting:first-child {
-  border-top: 5px double #787878;
-}
-body #wrap main #settings .settings-list .setting .setting-title {
-  margin-right: 10px;
-  padding-right: 5px;
+body #wrap main #settings table tbody tr th {
   border-right: 5px double #787878;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-body #wrap main #settings .settings-list .setting .setting-title h3 {
-  text-align: center;
+body #wrap main #settings table tbody tr th:last-child {
+  border-right: none;
+}
+body #wrap main #settings table tbody tr th h3 {
   margin: 0;
-  width: 100px;
 }
-body #wrap main #settings .settings-list .setting .settings-box input {
-  height: 36px;
-}
-body #wrap main #settings .settings-list .setting .settings-box p {
-  margin: 0;
+body #wrap main #settings table tbody tr th p {
   font-weight: bold;
 }
-body #wrap main #settings .settings-list .setting .settings-box .settings-inner-top img {
+body #wrap main #settings table tbody tr th img {
   margin-right: 10px;
   border: 5px double #787878;
-}
-body #wrap main #settings .settings-list .setting .settings-box .settings-inner-bot p {
-  margin: 0;
-  font-weight: bold;
 }
 body #wrap main #settings .buttons {
   display: flex;

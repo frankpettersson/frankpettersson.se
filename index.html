@@ -295,36 +295,35 @@
           <div class="box-header">
             <h2>SETTINGS</h2>
           </div>
-          <div class="settings-list">
-            <div class="setting">
-              <div class="setting-title">
-                <h3>UI COLOR</h3>
-              </div>
-              <div class="settings-box">
-                <input id="select-ui-color" type="color">
-                <p id="current-ui-color"></p>
-              </div>
-            </div>
-            <div class="setting">
-              <div class="setting-title">
-                <h3>LANDING PAGE</h3>
-              </div>
-              <div class="settings-box">
-                <select id="select-landing-page" name="select-landing-page">
-                  <option value="PROJECTS">PROJECTS</option>
-                  <option value="DESCRIPTIONS">DESCRIPTIONS</option>
-                  <option value="SETTINGS">SETTINGS</option>
-                </select>
-                <p id="current-landing-page"></p>
-              </div>
-            </div>
-            <div class="setting">
-              <div class="setting-title">
-                <h3>DEFAULT PREVIEW</h3>
-              </div>
-              <div class="settings-box">
-                <div class="settings-inner-top"><img id="current-default-project-image" src="" alt=""></div>
-                <div class="settings-inner-bot">
+          <table>
+            <tbody>
+              <tr>
+                <th>
+                  <h3>UI COLOR</h3>
+                </th>
+                <th>
+                  <input id="select-ui-color" type="color">
+                </th>
+                <th id="current-ui-color"></th>
+              </tr>
+              <tr>
+                <th>
+                  <h3>LANDING PAGE</h3>
+                </th>
+                <th>
+                  <select id="select-landing-page" name="select-landing-page">
+                    <option value="PROJECTS">PROJECTS</option>
+                    <option value="DESCRIPTIONS">DESCRIPTIONS</option>
+                    <option value="SETTINGS">SETTINGS</option>
+                  </select>
+                </th>
+                <th id="current-landing-page"></th>
+              </tr>
+              <tr>
+                <th>
+                  <h3>DEFAULT PROJECT</h3>
+                </th>
+                <th>
                   <select id="select-default-project" name="select-default-project">
                     <option value="projects/graphics/js_canvas/square_ant/index.html" label="SQUARE ANT"></option>
                     <option value="projects/graphics/js_canvas/symmetrical_ant/index.html" label="SYMMETRICAL ANT"></option>
@@ -351,11 +350,11 @@
                     <option value="projects/games/idle/idle/index.html" label="IDLE"></option>
                     <option value="projects/games/units/index.html" label="UNITS"></option>
                   </select>
-                  <p id="current-default-project"></p>
-                </div>
-              </div>
-            </div>
-          </div>
+                </th>
+                <th id="current-default-project"></th>
+              </tr>
+            </tbody>
+          </table>
           <div class="buttons">
             <div class="button" id="save">
               <p>SAVE</p>

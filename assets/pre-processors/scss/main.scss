@@ -391,43 +391,19 @@ body {
             }
             #settings {
                 @media only screen and (max-width: 300px) {padding: 5px;}
-                .settings-list {
-                    .setting {
-                        border-bottom: $border;
-                        padding: 10px 0;
-                        display: flex;
-                        &:first-child {border-top: $border;}
-                        .setting-title {
-                            margin-right: 10px;
-                            padding-right: 5px;
-                            border-right: $border;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            h3 {
-                                text-align: center;
-                                margin: 0;
-                                width: 100px;
-                            }
-                        }
-                        .settings-box {
-                            input {
-                                height: 36px;
-                            }
-                            p {
-                                margin: 0;
-                                font-weight: bold;
-                            }
-                            .settings-inner-top {
+                table {
+                    width: 100%;
+                    text-align: left;
+                    tbody {
+                        tr {
+                            th {
+                                border-right: $border;
+                                &:last-child {border-right: none;}
+                                h3 {margin: 0;}
+                                p {font-weight: bold;}
                                 img {
                                     margin-right: 10px;
                                     border: $border;
-                                }
-                            }
-                            .settings-inner-bot {
-                                p {
-                                    margin: 0;
-                                    font-weight: bold;
                                 }
                             }
                         }

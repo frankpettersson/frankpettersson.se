@@ -321,29 +321,27 @@ html(lang="en")
                 #settings.box
                     .box-header
                         h2 SETTINGS
-                    .settings-list
-                        .setting
-                            .setting-title
-                                h3 UI COLOR
-                            .settings-box
-                                input#select-ui-color(type='color')
-                                p#current-ui-color
-                        .setting
-                            .setting-title
-                                h3 LANDING PAGE
-                            .settings-box
-                                select#select-landing-page(name="select-landing-page")
-                                    option(value="PROJECTS") PROJECTS
-                                    option(value="DESCRIPTIONS") DESCRIPTIONS
-                                    option(value="SETTINGS") SETTINGS
-                                p#current-landing-page
-                        .setting
-                            .setting-title
-                                h3 DEFAULT PREVIEW
-                            .settings-box
-                                .settings-inner-top
-                                    img#current-default-project-image(src="", alt="")
-                                .settings-inner-bot
+                    table
+                        tbody
+                            tr
+                                th
+                                    h3 UI COLOR
+                                th
+                                    input#select-ui-color(type='color')
+                                th#current-ui-color
+                            tr
+                                th
+                                    h3 LANDING PAGE
+                                th
+                                    select#select-landing-page(name="select-landing-page")
+                                        option(value="PROJECTS") PROJECTS
+                                        option(value="DESCRIPTIONS") DESCRIPTIONS
+                                        option(value="SETTINGS") SETTINGS
+                                th#current-landing-page
+                            tr
+                                th
+                                    h3 DEFAULT PROJECT
+                                th
                                     select#select-default-project(name="select-default-project")
                                         each item in project
                                             if item.exclude === false
@@ -351,7 +349,7 @@ html(lang="en")
                                                     option(value='projects/graphics/'+item.path+'/index.html', label=item.name.toUpperCase())
                                                 if item.category === 'games'
                                                     option(value='projects/games/'+item.path+'/index.html', label=item.name.toUpperCase())
-                                    p#current-default-project
+                                th#current-default-project
                     .buttons
                         .button#save
                             p SAVE
