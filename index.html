@@ -300,7 +300,7 @@
               <tr>
                 <th>SETTING</th>
                 <th>CONFIGURATION</th>
-                <th>SAVED</th>
+                <th>CURRENT</th>
               </tr>
               <tr>
                 <td>UI COLOR</td>
@@ -308,6 +308,15 @@
                   <input id="select-ui-color" type="color">
                 </td>
                 <td id="current-ui-color"></td>
+              </tr>
+              <tr>
+                <td>DARK MODE</td>
+                <td>
+                  <label class="dark-mode" for="dark-mode-toggle">
+                    <input id="dark-mode-toggle" type="checkbox"><span class="slider"></span>
+                  </label>
+                </td>
+                <td id="current-dark-mode-state"></td>
               </tr>
               <tr>
                 <td>LANDING PAGE</td>
@@ -324,30 +333,30 @@
                 <td>DEFAULT PROJECT</td>
                 <td>
                   <select id="select-default-project" name="select-default-project">
-                    <option value="projects/graphics/js_canvas/square_ant/index.html" label="SQUARE ANT"></option>
-                    <option value="projects/graphics/js_canvas/symmetrical_ant/index.html" label="SYMMETRICAL ANT"></option>
-                    <option value="projects/graphics/js_canvas/experimental_ant/index.html" label="EXPERIMENTAL ANT"></option>
-                    <option value="projects/graphics/js_canvas/pixel_grid/index.html" label="PIXEL GRID"></option>
-                    <option value="projects/graphics/js_canvas/spinning_boxes/index.html" label="SPINNING BOXES"></option>
-                    <option value="projects/graphics/js_canvas/triangle_stop-motion/index.html" label="ROCKING TRIANGLES"></option>
-                    <option value="projects/graphics/js_canvas/paths_of_triangles/index.html" label="TRIANGLE PATHS"></option>
-                    <option value="projects/graphics/js_canvas/linear_expansion/index.html" label="LINEAR EXPANSION"></option>
-                    <option value="projects/graphics/js_canvas/better_ant/index.html" label="BETTER ANT"></option>
-                    <option value="projects/graphics/js_canvas/flowing_squares/index.html" label="FLOWING SQUARES"></option>
-                    <option value="projects/graphics/three.js/hollow_boxes/index.html" label="HOLLOW BOXES"></option>
-                    <option value="projects/graphics/js_canvas/look_in_the_middle/index.html" label="POINT ILLUSION"></option>
-                    <option value="projects/graphics/js_canvas/black_donut/index.html" label="BLACK DONUT"></option>
-                    <option value="projects/graphics/js_canvas/faded_bubbles_dark/index.html" label="BUBBLE BG DARK"></option>
-                    <option value="projects/graphics/js_canvas/faded_bubbles/index.html" label="BUBBLE BG"></option>
-                    <option value="projects/graphics/js_canvas/black_hole/index.html" label="BLACK HOLE"></option>
-                    <option value="projects/graphics/js_canvas/colours/index.html" label="COLOURS"></option>
-                    <option value="projects/graphics/three.js/3Dspheres_BG/index.html" label="3D SHAPES BG"></option>
-                    <option value="projects/graphics/three.js/3Dspheres/index.html" label="3D SHAPES"></option>
-                    <option value="projects/graphics/pixi_js/randomPolygonPositions/index.html" label="SHAKY TRIANGLES"></option>
-                    <option value="projects/graphics/pixi_js/rotatingPolygons/index.html" label="POLYGON"></option>
-                    <option value="projects/graphics/pixi_js/rotatingRectangle/index.html" label="RECTANGLE"></option>
-                    <option value="projects/games/idle/idle/index.html" label="IDLE"></option>
-                    <option value="projects/games/units/index.html" label="UNITS"></option>
+                    <option value="projects/graphics/js_canvas/square_ant/index.html" label="SQUARE ANT">SQUARE ANT</option>
+                    <option value="projects/graphics/js_canvas/symmetrical_ant/index.html" label="SYMMETRICAL ANT">SYMMETRICAL ANT</option>
+                    <option value="projects/graphics/js_canvas/experimental_ant/index.html" label="EXPERIMENTAL ANT">EXPERIMENTAL ANT</option>
+                    <option value="projects/graphics/js_canvas/pixel_grid/index.html" label="PIXEL GRID">PIXEL GRID</option>
+                    <option value="projects/graphics/js_canvas/spinning_boxes/index.html" label="SPINNING BOXES">SPINNING BOXES</option>
+                    <option value="projects/graphics/js_canvas/triangle_stop-motion/index.html" label="ROCKING TRIANGLES">ROCKING TRIANGLES</option>
+                    <option value="projects/graphics/js_canvas/paths_of_triangles/index.html" label="TRIANGLE PATHS">TRIANGLE PATHS</option>
+                    <option value="projects/graphics/js_canvas/linear_expansion/index.html" label="LINEAR EXPANSION">LINEAR EXPANSION</option>
+                    <option value="projects/graphics/js_canvas/better_ant/index.html" label="BETTER ANT">BETTER ANT</option>
+                    <option value="projects/graphics/js_canvas/flowing_squares/index.html" label="FLOWING SQUARES">FLOWING SQUARES</option>
+                    <option value="projects/graphics/three.js/hollow_boxes/index.html" label="HOLLOW BOXES">HOLLOW BOXES</option>
+                    <option value="projects/graphics/js_canvas/look_in_the_middle/index.html" label="POINT ILLUSION">POINT ILLUSION</option>
+                    <option value="projects/graphics/js_canvas/black_donut/index.html" label="BLACK DONUT">BLACK DONUT</option>
+                    <option value="projects/graphics/js_canvas/faded_bubbles_dark/index.html" label="BUBBLE BG DARK">BUBBLE BG DARK</option>
+                    <option value="projects/graphics/js_canvas/faded_bubbles/index.html" label="BUBBLE BG">BUBBLE BG</option>
+                    <option value="projects/graphics/js_canvas/black_hole/index.html" label="BLACK HOLE">BLACK HOLE</option>
+                    <option value="projects/graphics/js_canvas/colours/index.html" label="COLOURS">COLOURS</option>
+                    <option value="projects/graphics/three.js/3Dspheres_BG/index.html" label="3D SHAPES BG">3D SHAPES BG</option>
+                    <option value="projects/graphics/three.js/3Dspheres/index.html" label="3D SHAPES">3D SHAPES</option>
+                    <option value="projects/graphics/pixi_js/randomPolygonPositions/index.html" label="SHAKY TRIANGLES">SHAKY TRIANGLES</option>
+                    <option value="projects/graphics/pixi_js/rotatingPolygons/index.html" label="POLYGON">POLYGON</option>
+                    <option value="projects/graphics/pixi_js/rotatingRectangle/index.html" label="RECTANGLE">RECTANGLE</option>
+                    <option value="projects/games/idle/idle/index.html" label="IDLE">IDLE</option>
+                    <option value="projects/games/units/index.html" label="UNITS">UNITS</option>
                   </select>
                 </td>
                 <td id="current-default-project"></td>
@@ -361,6 +370,7 @@
             <div class="button" id="reset">
               <p>RESET</p>
             </div>
+            <div id="setting-state"></div>
           </div>
         </div>
       </main>

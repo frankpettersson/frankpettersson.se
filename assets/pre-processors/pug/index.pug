@@ -326,12 +326,19 @@ html(lang="en")
                             tr
                                 th SETTING
                                 th CONFIGURATION
-                                th SAVED
+                                th CURRENT
                             tr
                                 td UI COLOR
                                 td
                                     input#select-ui-color(type='color')
                                 td#current-ui-color
+                            tr
+                                td DARK MODE
+                                td
+                                    label.dark-mode(for="dark-mode-toggle")
+                                        input#dark-mode-toggle(type="checkbox")
+                                        span.slider
+                                td#current-dark-mode-state
                             tr
                                 td LANDING PAGE
                                 td
@@ -347,15 +354,16 @@ html(lang="en")
                                         each item in project
                                             if item.exclude === false
                                                 if item.category === 'graphics'
-                                                    option(value='projects/graphics/'+item.path+'/index.html', label=item.name.toUpperCase())
+                                                    option(value='projects/graphics/'+item.path+'/index.html', label=item.name.toUpperCase())=item.name.toUpperCase()
                                                 if item.category === 'games'
-                                                    option(value='projects/games/'+item.path+'/index.html', label=item.name.toUpperCase())
+                                                    option(value='projects/games/'+item.path+'/index.html', label=item.name.toUpperCase())=item.name.toUpperCase()
                                 td#current-default-project
                     .buttons
                         .button#save
                             p SAVE
                         .button#reset
                             p RESET
+                        #setting-state
             footer
                 .box.footer
                     #footer-left

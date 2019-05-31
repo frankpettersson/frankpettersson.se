@@ -1,7 +1,5 @@
 //___________________________________________________________
 let canvas = document.querySelector('canvas');
-console.log(canvas.width);
-console.log(canvas.height);
 const ctx = canvas.getContext('2d');
 //___________________________________________________________
 
