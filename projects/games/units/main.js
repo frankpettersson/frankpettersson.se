@@ -1,3 +1,10 @@
+function thousandSeparator(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x)) x = x.replace(pattern, '$1, $2');
+    return x;
+}
+
 let root = {
     units: [],
     lastUnit: 'Coins',
@@ -8,7 +15,7 @@ let root = {
         this.createUnit('Ogre');
         this.createUnit('Orc');
     },
-    getCoin: document.querySelector('#get-coin').addEventListener('click', function() {
+    getCoin: document.querySelector('#get-coin').addEventListener('click', function () {
         root.coinVal++;
         document.querySelector('#coin').innerText = root.coinVal;
     }),
@@ -30,7 +37,7 @@ let root = {
         unitOwned.id = 'owned' + this.unitNumber;
         unitCost.className = 'unit button';
         unitCost.setAttribute('data-value', this.unitNumber);
-        unitCost.addEventListener('click', e => this.buyUnit(e.target));
+        unitCost.addEventListener('click', (e) => this.buyUnit(e.target));
         this.setValue(unitName, name);
         this.setValue(unitCost, cost + ' ' + this.lastUnit);
         this.setValue(unitCreates, this.lastUnit);
@@ -49,10 +56,10 @@ let root = {
         //increment unit number
         this.unitNumber++;
     },
-    newUnit: document.querySelector('#unit').addEventListener('click', function() {
+    newUnit: document.querySelector('#unit').addEventListener('click', function () {
         let name = document.querySelector('#name').value;
-        if (name !== "") {
-            root.createUnit(name)
+        if (name !== '') {
+            root.createUnit(name);
             document.getElementById('name').value = '';
             document.getElementById('error-unit').style.display = 'none';
             document.getElementById('error-create').style.display = 'none';
@@ -104,8 +111,8 @@ let root = {
         }
         error.innerText = message;
         error.style.display = 'block';
-    }
-}
+    },
+};
 root.init();
 //TICKER
 let fpsInterval, now, then, elapsed;
@@ -125,10 +132,10 @@ function loop() {
         then = now - (elapsed % fpsInterval);
         root.coinVal += 1 * root.units[0].owned;
         for (let i = 0; i < root.units.length - 1; i++) {
-            root.units[i].owned += 1 * root.units[i + 1].owned
+            root.units[i].owned += 1 * root.units[i + 1].owned;
             let owned = 'owned' + i;
             document.getElementById(owned).innerText = root.units[i].owned;
         }
-        document.getElementById('coin').innerText = root.coinVal;
+        document.getElementById('coin').innerText = thousandSeparato(root.coinVal);
     }
 }
