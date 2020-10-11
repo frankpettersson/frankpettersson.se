@@ -136,6 +136,6 @@ function loop() {
             let owned = 'owned' + i;
             document.getElementById(owned).innerText = root.units[i].owned;
         }
-        document.getElementById('coin').innerText = thousandSeparato(root.coinVal);
+        document.getElementById('coin').innerText = thousandSeparator(root.coinVal);
     }
 }
