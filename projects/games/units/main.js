@@ -122,7 +122,7 @@ function startAnimating(fps) {
     then = Date.now();
     loop();
 }
-startAnimating(1);
+startAnimating(60);
 
 function loop() {
     requestAnimationFrame(loop);
