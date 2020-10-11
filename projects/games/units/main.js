@@ -1,7 +1,7 @@
 function thousandSeparator(x) {
     x = x.toString();
     var pattern = /(-?\d+)(\d{3})/;
-    while (pattern.test(x)) x = x.replace(pattern, '$1, $2');
+    while (pattern.test(x)) x = x.replace(pattern, '$1,$2');
     return x;
 }
 
@@ -134,7 +134,7 @@ function loop() {
         for (let i = 0; i < root.units.length - 1; i++) {
             root.units[i].owned += 1 * root.units[i + 1].owned;
             let owned = 'owned' + i;
-            document.getElementById(owned).innerText = root.units[i].owned;
+            document.getElementById(owned).innerText = thousandSeparator(root.units[i].owned);
         }
         document.getElementById('coin').innerText = thousandSeparator(root.coinVal);
     }
